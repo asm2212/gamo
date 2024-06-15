@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:gamo/home/food_page_body.dart';
 import 'package:gamo/utils/colors.dart';
 import 'package:gamo/widgets/big_text.dart';
 import 'package:gamo/widgets/small_text.dart';
@@ -50,6 +51,7 @@ class _MainFoodPageState extends State<MainFoodPage> {
           ),
         ),
       ),
+        FoodPageBody(),
         ],
       )
     );
