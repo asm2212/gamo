@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gamo/utils/colors.dart';
 import 'package:gamo/widgets/big_text.dart';
+import 'package:gamo/widgets/icon_and_text_widget.dart';
 import 'package:gamo/widgets/small_text.dart';
 
 class FoodPageBody extends StatefulWidget {
@@ -81,6 +82,19 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                       SmallText(text: "comments"),
                     ],
                   ),
+                  SizedBox(height: 20,),
+                  Row(
+                    children: [
+                      IconAndTextWidget(icon: Icons.circle_sharp,
+                       text: "normal", 
+                       iconColor: AppColors.iconColor1),
+                      IconAndTextWidget(icon: Icons.location_on,
+                       text: "1.2km", 
+                       iconColor: AppColors.mainColor),
+                      IconAndTextWidget(icon: Icons.access_time_rounded,
+                       text: "3min", 
+                       iconColor: AppColors.iconColor2),
+                  ],)
                 ],
               ),
             ),
