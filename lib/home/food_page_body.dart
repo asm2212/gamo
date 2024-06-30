@@ -51,7 +51,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
           ),
         ),
         SizedBox(height: 10),
-        DotsIndicator(
+         new DotsIndicator(
           dotsCount: 5,
           position: _currPageValue.round(),
           decorator: DotsDecorator(
@@ -62,7 +62,27 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                 borderRadius: BorderRadius.circular(5.0)),
           ),
         ),
-        SizedBox(height: 10),
+        SizedBox(height: Dimensions.height30),
+        Container(
+          margin: EdgeInsets.only(left: Dimensions.width30),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              BigText(text: "Popular"),
+              SizedBox(width: Dimensions.width10,),
+              Container(
+                margin: const EdgeInsets.only(bottom: 3),
+                child: BigText(text: ".",color: Colors.black26,),
+              ),
+              SizedBox(width: Dimensions.width10,),
+              Container(
+                margin: const EdgeInsets.only(bottom: 2),
+                child: SmallText(text: "Food Pairing"),
+              ),
+              
+            ],
+          ),
+        )
       ],
     );
   }
