@@ -27,6 +27,9 @@ class Dimensions {
 
   static double iconSize24 = 0;
 
+  static double listViewImgSize = 0;
+  static double listViewTextSize = 0;
+
   static void init(BuildContext context) {
     screenHeight = MediaQuery.of(context).size.height;
     screenWidth = MediaQuery.of(context).size.width;
@@ -52,5 +55,9 @@ class Dimensions {
     radius30 = screenHeight / 28.13;
     
     iconSize24 = screenHeight / 35.17;
+     
+     listViewImgSize = screenWidth / 3.25;
+     listViewTextSize = screenWidth / 3.9;
+
   }
 }

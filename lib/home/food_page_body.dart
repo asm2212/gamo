@@ -39,7 +39,6 @@ class _FoodPageBodyState extends State<FoodPageBody> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        // Container height set to a fraction of the screen height
         Container(
           height: MediaQuery.of(context).size.height * 0.4,
           child: PageView.builder(
@@ -51,7 +50,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
           ),
         ),
         SizedBox(height: 10),
-         new DotsIndicator(
+        DotsIndicator(
           dotsCount: 5,
           position: _currPageValue.round(),
           decorator: DotsDecorator(
@@ -69,20 +68,90 @@ class _FoodPageBodyState extends State<FoodPageBody> {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               BigText(text: "Popular"),
-              SizedBox(width: Dimensions.width10,),
+              SizedBox(width: Dimensions.width10),
               Container(
                 margin: const EdgeInsets.only(bottom: 3),
-                child: BigText(text: ".",color: Colors.black26,),
+                child: BigText(text: ".", color: Colors.black26),
               ),
-              SizedBox(width: Dimensions.width10,),
+              SizedBox(width: Dimensions.width10),
               Container(
                 margin: const EdgeInsets.only(bottom: 2),
                 child: SmallText(text: "Food Pairing"),
               ),
-              
             ],
           ),
-        )
+        ),
+        ListView.builder(
+          physics: NeverScrollableScrollPhysics(),
+          shrinkWrap: true,
+          itemCount: 10,
+          itemBuilder: (context, index) {
+            return Container(
+              margin: EdgeInsets.only(left: Dimensions.width20, right: Dimensions.width20, bottom: Dimensions.height10),
+              child: Row(
+                children: [
+                  Container(
+                    width: Dimensions.listViewImgSize,
+                    height: Dimensions.listViewImgSize,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(Dimensions.radius20),
+                      color: Colors.white38,
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: AssetImage("assets/images/food2.jpg"),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      height: Dimensions.listViewTextSize,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(Dimensions.radius20),
+                          bottomRight: Radius.circular(Dimensions.radius20),
+                        ),
+                        color: Colors.white,
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.only(left: Dimensions.width10, right: Dimensions.width10),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            BigText(text: "Nutrius breakfast in 40"),
+                            SizedBox(height: Dimensions.height10),
+                            SmallText(text: "with 40 behavoiur"),
+                            SizedBox(height: Dimensions.height10),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                IconAndTextWidget(
+                                  icon: Icons.circle_sharp,
+                                  text: "normal",
+                                  iconColor: AppColors.iconColor1,
+                                ),
+                                IconAndTextWidget(
+                                  icon: Icons.location_on,
+                                  text: "1.2km",
+                                  iconColor: AppColors.mainColor,
+                                ),
+                                IconAndTextWidget(
+                                  icon: Icons.access_time_rounded,
+                                  text: "3min",
+                                  iconColor: AppColors.iconColor2,
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            );
+          },
+        ),
       ],
     );
   }
@@ -131,16 +200,17 @@ class _FoodPageBodyState extends State<FoodPageBody> {
               height: Dimensions.pageViewTextContainer,
               margin: EdgeInsets.only(left: Dimensions.width30, right: Dimensions.width30, bottom: Dimensions.height30),
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(Dimensions.radius20),
-                  color: Colors.white,
-                  boxShadow: [
-                    BoxShadow(
-                        color: Color(0xFFe8e8e8),
-                        blurRadius: 5.0,
-                        offset: Offset(0, 5)),
-                    BoxShadow(color: Colors.white, offset: Offset(-5, 0)),
-                    BoxShadow(color: Colors.white, offset: Offset(5, 0)),
-                  ]),
+                borderRadius: BorderRadius.circular(Dimensions.radius20),
+                color: Colors.white,
+                boxShadow: [
+                  BoxShadow(
+                    color: Color(0xFFe8e8e8),
+                    blurRadius: 5.0,
+                    offset: Offset(0, 5)),
+                  BoxShadow(color: Colors.white, offset: Offset(-5, 0)),
+                  BoxShadow(color: Colors.white, offset: Offset(5, 0)),
+                ],
+              ),
               child: Padding(
                 padding: EdgeInsets.only(top: Dimensions.height15, left: Dimensions.width15, right: Dimensions.width15),
                 child: Column(
@@ -163,14 +233,13 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                         SizedBox(width: 10),
                         SmallText(text: "4.5"),
                         SizedBox(width: 10),
-                        SmallText(text: "122"),
-                        SizedBox(width: 5),
+                        SmallText(text: "1287"),
+                        SizedBox(width: 10),
                         SmallText(text: "comments"),
                       ],
                     ),
                     SizedBox(height: Dimensions.height20),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         IconAndTextWidget(
                           icon: Icons.circle_sharp,
@@ -179,12 +248,12 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                         ),
                         IconAndTextWidget(
                           icon: Icons.location_on,
-                          text: "1.2km",
+                          text: "1.7km",
                           iconColor: AppColors.mainColor,
                         ),
                         IconAndTextWidget(
                           icon: Icons.access_time_rounded,
-                          text: "3min",
+                          text: "32min",
                           iconColor: AppColors.iconColor2,
                         ),
                       ],

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:gamo/home/food_page_body.dart';
 import 'package:gamo/utils/colors.dart';
@@ -20,41 +19,43 @@ class _MainFoodPageState extends State<MainFoodPage> {
       body: Column(
         children: [
           Container(
-        child: Container(
-          margin: EdgeInsets.only(top: Dimensions.height45,bottom: Dimensions.height15),
-          padding: EdgeInsets.only(left: Dimensions.width20,right: Dimensions.width20),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                children: [
-                  BigText(text: "Ethiopia",color: AppColors.mainColor,),
-                  Row(
-                    children: [
-                          SmallText(text: "40",color: Colors.black54),
-                          Icon(Icons.arrow_drop_down_rounded)
-                    ],
-                  )
-                ],
-              ),
-              Center(
-                child: Container(
-                  width: Dimensions.height45,
-                  height: Dimensions.height45,
-                  child: Icon(Icons.search,color: Colors.white,size:Dimensions.iconSize24,),
-                  decoration: BoxDecoration(
-                    color: AppColors.mainColor,
-                    borderRadius: BorderRadius.circular(Dimensions.radius15), // Add comma here
-                  ),
+            margin: EdgeInsets.only(top: Dimensions.height45, bottom: Dimensions.height15),
+            padding: EdgeInsets.only(left: Dimensions.width20, right: Dimensions.width20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  children: [
+                    BigText(text: "Ethiopia", color: AppColors.mainColor),
+                    Row(
+                      children: [
+                        SmallText(text: "40", color: Colors.black54),
+                        Icon(Icons.arrow_drop_down_rounded)
+                      ],
+                    )
+                  ],
                 ),
-              )
-            ],
+                Center(
+                  child: Container(
+                    width: Dimensions.height45,
+                    height: Dimensions.height45,
+                    child: Icon(Icons.search, color: Colors.white, size: Dimensions.iconSize24),
+                    decoration: BoxDecoration(
+                      color: AppColors.mainColor,
+                      borderRadius: BorderRadius.circular(Dimensions.radius15),
+                    ),
+                  ),
+                )
+              ],
+            ),
           ),
-        ),
-      ),
-        FoodPageBody(),
+          Expanded(
+            child: SingleChildScrollView(
+              child: FoodPageBody(),
+            ),
+          ),
         ],
-      )
+      ),
     );
   }
 }
