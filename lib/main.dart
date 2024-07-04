@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:gamo/pages/food/popular_food_detail.dart';
 import 'package:get/get.dart';
-import 'package:gamo/home/main_food_page.dart';
+import 'package:gamo/pages/home/main_food_page.dart';
 import 'package:gamo/utils/dimensions.dart';
 
 void main() {
@@ -19,7 +20,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: InitializerWidget(child: MainFoodPage()),
+      // home: InitializerWidget(child: MainFoodPage()),
+      home: PopularFoodDetail(),
     );
   }
 }
